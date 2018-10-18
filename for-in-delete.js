@@ -40,7 +40,11 @@
 */
 
 function showValues( obj ) {
-  //Code Here
+  var concatenation = '';
+  for (value in obj) {
+    concatenation += obj[value];
+  }
+  return concatenation; 
 }
 
 
@@ -54,6 +58,14 @@ function showValues( obj ) {
 */
 
 //Code Here
+function greaterThan10 (obj) {
+  for (value in obj) {
+    if (obj[value]>10) {
+      obj[value] = 0;
+    }
+  }
+  return obj;
+}
 
 
 
@@ -66,6 +78,12 @@ function showValues( obj ) {
 */
 
 //Code Here
+function double (obj) {
+  for (value in obj) {
+    obj[value] *= 2;
+  }
+  return obj;
+}
 
 
 
@@ -80,6 +98,15 @@ function showValues( obj ) {
 */
 
 //Code Here
+function secrets (obj) {
+  var string = '';
+  for (value in obj) {
+    if (value.indexOf('sh')===0) {
+      string += obj[value];
+    }
+  }
+  return string;
+}
 
 
 
@@ -111,6 +138,14 @@ function showValues( obj ) {
 */
 
 //Code Here
+function removePassword (obj) {
+  for (value in obj) {
+    if (value==='password') {
+      delete obj[value];
+    }
+  }
+  return obj;
+}
 
 
 
@@ -130,6 +165,11 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+for (value in deleteTheBigNumbers) {
+  if (deleteTheBigNumbers[value]>100) {
+    delete deleteTheBigNumbers[value];
+  }
+}
 
 
 
@@ -143,6 +183,14 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+function startsWithK (obj) {
+  for (val in obj) {
+    if (val.indexOf('k')===0) {
+      delete obj[val]
+    }
+  }
+  return obj;
+}
 
 
 
@@ -158,5 +206,13 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+function hiddenTreasure (obj) {
+  for (val in obj) {
+    if (!obj[val].includes('treasure')) {
+      delete obj[val];
+    }
+  }
+  return obj;
+}
 
 
